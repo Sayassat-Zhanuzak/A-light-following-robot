@@ -93,7 +93,7 @@ void loop()
   Serial.println(distance);
 
   // obstcle avoidance algorithm
-  if (distance > 0 && distance < OBS_DISTANCE)
+if (distance > 0 && distance < OBS_DISTANCE)
   {
     left_motor(-v_0);
     right_motor(-v_0);
