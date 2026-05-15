@@ -83,8 +83,7 @@ void loop()
 {
   int leftVal  = read_LDR(LDR_LEFT);
   int rightVal = read_LDR(LDR_RIGHT);
-
-  long distance = get_distance();
+  long distance =get_distance();
   // printing information into a serial monitor
   Serial.print("L:");
   Serial.print(leftVal);
@@ -130,7 +129,7 @@ void PD(int leftVal, int rightVal) {
   float error = (float)raw_error;
 
   // gain scheduling (GS)
-  float GS = 1f;
+  float GS = 1.0f;
   if (abs(raw_error) < 200) {
     GS = 1.5f;
   }
@@ -168,7 +167,7 @@ long get_distance()
   if (duration == 0) 
     return NO_ECHO;
 
-  return duration * 0.034 / 2; \\ duration * speed of sound /2
+  return duration * 0.034 / 2; // duration * speed of sound /2
 }
 
 // motor motion control
